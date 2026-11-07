@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EFEBE3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2316140F'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial' font-size='30' font-weight='700' fill='%23EFEBE3' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<title>L.E.FT Architects — Beirut · New York</title>
+<meta name="description" content="L.E.FT Architects. Beirut and New York. Architecture at the intersection of cultural and political production.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Amiri:wght@400;700&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   L.E.FT ARCHITECTS
+   Type:  Familjen Grotesk (latin) · Amiri (arabic) · Newsreader (editorial italic)
+   Ground: warm limestone — drawn from the Moukhtara stone
+   ============================================================ */
+
+:root{
+  --paper:#EFEBE3;
+  --paper-2:#E7E2D8;
+  --paper-3:#DCD6CA;
+  --ink:#16140F;
+  --ink-70:rgba(22,20,15,.70);
+  --ink-45:rgba(22,20,15,.45);
+  --ink-20:rgba(22,20,15,.20);
+  --ink-10:rgba(22,20,15,.10);
+  --rule:rgba(22,20,15,.16);
+  --accent:#9C3A22;
+  --shadow:0 2px 40px rgba(22,20,15,.09);
+
+  --mx:clamp(18px,3.6vw,56px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --slow:cubic-bezier(.16,1,.3,1);
+}
+:root[data-theme="dark"]{
+  --paper:#121110;
+  --paper-2:#1B1A18;
+  --paper-3:#24221F;
+  --ink:#EDE8E0;
+  --ink-70:rgba(237,232,224,.70);
+  --ink-45:rgba(237,232,224,.45);
+  --ink-20:rgba(237,232,224,.20);
+  --ink-10:rgba(237,232,224,.10);
+  --rule:rgba(237,232,224,.16);
+  --accent:#D2694A;
+  --shadow:0 2px 60px rgba(0,0,0,.5);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Familjen Grotesk",ui-sans-serif,system-ui,sans-serif;
+  font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  font-variant-ligatures:common-ligatures;
+  overflow-x:hidden;
+  transition:background .5s var(--ease),color .5s var(--ease);
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+::selection{background:var(--accent);color:var(--paper)}
+
+/* ---------- type primitives ---------- */
+.ar{font-family:"Amiri",serif;font-weight:400;direction:rtl;unicode-bidi:isolate}
+.meta{
+  font-size:clamp(10px,.72vw,11.5px);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;color:var(--ink-45);
+}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+.quote{font-family:"Newsreader",Georgia,serif;font-style:italic;font-weight:300}
+
+/* ============================================================
+   CHROME
+   ============================================================ */
+header.bar{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:20px var(--mx);
+  mix-blend-mode:normal;
+  transition:background .4s var(--ease),border-color .4s var(--ease),padding .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+header.bar.solid{
+  background:color-mix(in srgb,var(--paper) 86%,transparent);
+  backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border-bottom-color:var(--rule);
+  padding-top:14px;padding-bottom:14px;
+}
+header.bar.on-hero{color:#fff}
+header.bar.on-hero .mark-sub{color:rgba(255,255,255,.65)}
+header.bar.on-hero nav a{color:rgba(255,255,255,.8)}
+header.bar.on-hero nav a:hover,header.bar.on-hero nav a[aria-current="true"]{color:#fff}
+header.bar.on-hero .tgl{border-color:rgba(255,255,255,.35);color:#fff}
+
+.mark{display:flex;align-items:baseline;gap:12px;line-height:1}
+.mark-name{font-size:15px;font-weight:600;letter-spacing:.02em}
+.mark-sub{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);font-weight:500}
+@media(max-width:720px){.mark-sub{display:none}}
+
+nav.main{display:flex;gap:clamp(14px,2vw,30px);align-items:center}
+nav.main a{
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+  color:var(--ink-45);position:relative;padding-bottom:2px;transition:color .3s var(--ease)
+}
+nav.main a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:currentColor;transform:scaleX(0);transform-origin:right;
+  transition:transform .45s var(--slow);
+}
+nav.main a:hover::after,nav.main a[aria-current="true"]::after{transform:scaleX(1);transform-origin:left}
+nav.main a:hover,nav.main a[aria-current="true"]{color:var(--ink)}
+.tgl{
+  width:30px;height:30px;border:1px solid var(--ink-20);border-radius:50%;
+  display:grid;place-items:center;transition:all .35s var(--ease);flex:0 0 auto;
+}
+.tgl:hover{border-color:var(--ink);transform:rotate(90deg)}
+.tgl svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.4}
+/* mobile: keep full navigation, tighten it rather than hide it */
+@media(max-width:620px){
+  header.bar{padding-left:16px;padding-right:16px;gap:12px}
+  nav.main{gap:13px}
+  nav.main a{font-size:10px;letter-spacing:.07em}
+  .mark-name{font-size:14px}
+  .tgl{width:27px;height:27px}
+}
+@media(max-width:380px){nav.main a{font-size:9.5px;letter-spacing:.04em}nav.main{gap:10px}}
+
+/* ============================================================
+   VIEWS
+   ============================================================ */
+main{min-height:100vh}
+.view{display:none}
+.view.active{display:block;animation:viewIn .7s var(--slow) both}
+@keyframes viewIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;height:100svh;min-height:560px;overflow:hidden;background:#0d0c0b}
+.hero-media{position:absolute;inset:0}
+.hero-media img{
+  width:100%;height:100%;object-fit:cover;object-position:50% 58%;
+  transform:scale(1.08);opacity:0;
+  animation:heroImg 2.4s var(--slow) .15s forwards;
+}
+@keyframes heroImg{to{transform:scale(1);opacity:1}}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(10,9,8,.40) 0%,rgba(10,9,8,0) 22%,rgba(10,9,8,0) 38%,rgba(10,9,8,.52) 72%,rgba(10,9,8,.82) 100%);
+}
+.hero-inner{
+  position:absolute;inset:auto 0 0 0;padding:0 var(--mx) clamp(28px,4.4vw,56px);
+  color:#fff;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;
+}
+.hero-title{
+  font-size:clamp(38px,8.2vw,124px);line-height:.88;letter-spacing:-.045em;font-weight:600;
+  margin:0;text-wrap:balance;text-shadow:0 1px 36px rgba(8,7,6,.42);
+}
+.hero-title span{display:block;overflow:hidden}
+.hero-title span i{display:block;font-style:normal;transform:translateY(105%);animation:riseUp 1.25s var(--slow) forwards}
+.hero-title span:nth-child(1) i{animation-delay:.42s}
+.hero-title span:nth-child(2) i{animation-delay:.52s}
+@keyframes riseUp{to{transform:translateY(0)}}
+.hero-aside{max-width:min(34ch,100%);opacity:0;animation:fadeUp 1.1s var(--slow) .95s forwards}
+.hero-aside p{margin:0;font-size:clamp(13px,1.05vw,15px);line-height:1.5;color:rgba(255,255,255,.82)}
+.hero-aside .meta{color:rgba(255,255,255,.55);margin-bottom:10px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.hero-credit{
+  position:absolute;right:calc(var(--mx) - 4px);top:50%;
+  transform:rotate(90deg);transform-origin:100% 50%;
+  font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.52);white-space:nowrap;
+  opacity:0;animation:fadeOnly 1s var(--slow) 1.3s forwards;
+  text-shadow:0 1px 14px rgba(8,7,6,.6);
+}
+@keyframes fadeOnly{to{opacity:1}}
+@media(max-width:900px){.hero-credit{display:none}}
+
+/* ============================================================
+   SECTION SCAFFOLD
+   ============================================================ */
+.sec{padding:clamp(72px,10vw,164px) var(--mx);position:relative}
+.sec--tight{padding-top:clamp(48px,6vw,88px)}
+.sec-head{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:8px;
+  padding-bottom:clamp(24px,3vw,46px);margin-bottom:clamp(24px,3vw,46px);
+  border-bottom:1px solid var(--rule);
+}
+.sec-head .meta{display:flex;gap:14px;align-items:baseline}
+h2.sec-title{
+  font-size:clamp(26px,4.4vw,62px);line-height:1.02;letter-spacing:-.035em;font-weight:600;margin:0;
+}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1s var(--slow),transform 1s var(--slow)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.08s}
+.rv[data-d="2"]{transition-delay:.16s}
+.rv[data-d="3"]{transition-delay:.24s}
+.rv[data-d="4"]{transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero-media img,.hero-title span i,.hero-aside,.hero-credit{animation:none!important;opacity:1!important;transform:none!important}
+}
+
+/* ============================================================
+   STATEMENT
+   ============================================================ */
+.statement{
+  font-size:clamp(21px,2.9vw,40px);line-height:1.22;letter-spacing:-.022em;font-weight:400;
+  max-width:19ch;margin:0;text-wrap:balance;
+}
+.statement em{font-family:"Newsreader",Georgia,serif;font-style:italic;font-weight:300;letter-spacing:-.005em}
+.statement-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,96px);align-items:start}
+@media(max-width:860px){.statement-grid{grid-template-columns:1fr}.statement{max-width:none}}
+.statement-body p{margin:0 0 1.1em;font-size:15px;line-height:1.62;color:var(--ink-70);max-width:46ch}
+.statement-body p:last-child{margin-bottom:0}
+
+/* ============================================================
+   LEXICON — the five Arabic terms
+   ============================================================ */
+.lex{border-top:1px solid var(--rule)}
+.lex-row{
+  display:grid;grid-template-columns:minmax(80px,.5fr) minmax(0,1.1fr) minmax(0,1.9fr) auto;
+  gap:clamp(14px,3vw,48px);align-items:center;
+  padding:clamp(16px,2.1vw,30px) 0;border-bottom:1px solid var(--rule);
+  width:100%;text-align:left;position:relative;cursor:pointer;
+  transition:background .5s var(--ease),padding-left .5s var(--slow),padding-right .5s var(--slow);
+}
+.lex-row:hover{background:var(--paper-2);padding-left:14px;padding-right:14px}
+.lex-ar{
+  font-family:"Amiri",serif;direction:rtl;
+  font-size:clamp(30px,4.2vw,58px);line-height:1;letter-spacing:0;
+  transition:color .5s var(--ease),transform .7s var(--slow);
+}
+.lex-row:hover .lex-ar{color:var(--accent);transform:translateX(-4px)}
+.lex-latin{font-size:clamp(17px,1.9vw,27px);letter-spacing:-.02em;font-weight:500;line-height:1.1}
+.lex-latin small{display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-45);font-weight:500;margin-top:6px}
+.lex-gloss{font-size:14px;line-height:1.5;color:var(--ink-70);max-width:52ch}
+.lex-count{
+  font-size:11px;letter-spacing:.12em;color:var(--ink-45);white-space:nowrap;
+  display:flex;align-items:center;gap:10px;
+}
+.lex-count .arrow{transition:transform .5s var(--slow);display:inline-block}
+.lex-row:hover .lex-count .arrow{transform:translateX(6px)}
+.lex-row:hover .lex-count{color:var(--ink)}
+@media(max-width:820px){
+  .lex-row{grid-template-columns:auto 1fr;grid-template-areas:"ar latin" "gloss gloss";row-gap:10px;align-items:baseline}
+  .lex-ar{grid-area:ar}.lex-latin{grid-area:latin}.lex-gloss{grid-area:gloss}.lex-count{display:none}
+}
+
+/* ============================================================
+   WORK INDEX — hover-reveal
+   ============================================================ */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:clamp(22px,3vw,40px)}
+.filters button{
+  font-size:11px;letter-spacing:.11em;text-transform:uppercase;font-weight:500;
+  padding:8px 14px;border:1px solid var(--ink-20);border-radius:999px;color:var(--ink-45);
+  transition:all .35s var(--ease);white-space:nowrap;
+}
+.filters button:hover{border-color:var(--ink);color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.filters button .ar{font-size:14px;margin-left:7px;opacity:.75}
+
+.index{border-top:1px solid var(--rule)}
+.idx{
+  display:grid;grid-template-columns:52px minmax(0,2.3fr) minmax(0,1.5fr) 86px 1fr;
+  gap:clamp(10px,2vw,32px);align-items:baseline;width:100%;text-align:left;
+  padding:clamp(15px,1.9vw,26px) 0;border-bottom:1px solid var(--rule);
+  position:relative;cursor:pointer;
+  transition:padding-left .6s var(--slow),opacity .45s var(--ease),border-color .4s var(--ease);
+}
+.idx:hover{padding-left:16px}
+.index.hovering .idx{opacity:.34}
+.index.hovering .idx:hover{opacity:1}
+.idx-n{font-size:11px;color:var(--ink-45);letter-spacing:.06em;padding-top:5px}
+.idx-t{
+  font-size:clamp(19px,2.5vw,34px);line-height:1.08;letter-spacing:-.03em;font-weight:500;
+  transition:color .4s var(--ease);
+}
+.idx:hover .idx-t{color:var(--accent)}
+.idx-l{font-size:13px;color:var(--ink-70);line-height:1.4}
+.idx-y{font-size:13px;color:var(--ink-45);letter-spacing:.03em}
+.idx-term{justify-self:end;display:flex;align-items:baseline;gap:9px;white-space:nowrap}
+.idx-term .ar{font-size:19px;color:var(--ink-45);transition:color .4s var(--ease)}
+.idx:hover .idx-term .ar{color:var(--accent)}
+.idx-term .lat{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45)}
+.idx[hidden]{display:none}
+@media(max-width:900px){
+  .idx{grid-template-columns:34px 1fr auto;grid-template-areas:"n t t" ". l y";row-gap:6px;align-items:baseline}
+  .idx-n{grid-area:n}.idx-t{grid-area:t}.idx-l{grid-area:l}.idx-y{grid-area:y;justify-self:end}
+  .idx-term{display:none}
+}
+
+/* floating hover preview */
+#peek{
+  position:fixed;top:0;left:0;z-index:40;pointer-events:none;
+  width:clamp(220px,21vw,330px);aspect-ratio:4/5;overflow:hidden;
+  opacity:0;transform:translate(-50%,-50%) scale(.94);
+  transition:opacity .4s var(--ease),transform .55s var(--slow);
+  box-shadow:var(--shadow);
+}
+#peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+#peek img{width:100%;height:100%;object-fit:cover}
+@media(max-width:900px),(hover:none){#peek{display:none}}
+
+/* ============================================================
+   FEATURED STRIP
+   ============================================================ */
+.feat{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,22px);align-items:end}
+.feat figure{margin:0;cursor:pointer;position:relative}
+.feat figure img{width:100%;height:auto;transition:transform 1.3s var(--slow),filter .7s var(--ease)}
+.feat figure .wrap{overflow:hidden;background:var(--paper-3)}
+.feat figure:hover img{transform:scale(1.045)}
+.feat figcaption{padding-top:12px;display:flex;justify-content:space-between;gap:14px;align-items:baseline;border-top:1px solid var(--rule);margin-top:12px}
+.feat figcaption b{font-weight:500;font-size:14.5px;letter-spacing:-.01em}
+.feat figcaption span{font-size:11.5px;color:var(--ink-45);white-space:nowrap}
+.f-a{grid-column:1/8}
+.f-b{grid-column:9/13}
+.f-c{grid-column:1/5}
+.f-d{grid-column:6/13}
+@media(max-width:860px){.feat{grid-template-columns:1fr}.f-a,.f-b,.f-c,.f-d{grid-column:1/-1}}
+
+/* ============================================================
+   PROJECT VIEW
+   ============================================================ */
+.p-hero{position:relative;height:84svh;min-height:460px;overflow:hidden;background:var(--paper-3)}
+.p-hero img{width:100%;height:100%;object-fit:cover;object-position:50% 48%}
+.p-hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,9,8,.34) 0%,rgba(10,9,8,0) 22%,rgba(10,9,8,.20) 44%,rgba(10,9,8,.62) 72%,rgba(10,9,8,.93) 100%);
+  z-index:1;
+}
+.p-hero-cap{
+  position:absolute;inset:auto 0 0 0;padding:0 var(--mx) clamp(26px,3.4vw,46px);color:#fff;z-index:2;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;
+}
+.p-hero-cap h1{
+  font-size:clamp(28px,5.4vw,76px);line-height:.96;letter-spacing:-.04em;font-weight:600;margin:0;max-width:16ch;
+  text-wrap:balance;text-shadow:0 1px 34px rgba(8,7,6,.5);
+}
+.p-hero-cap .p-term{display:flex;align-items:baseline;gap:12px;color:rgba(255,255,255,.8);text-shadow:0 1px 20px rgba(8,7,6,.55)}
+.p-hero-cap .p-term .ar{font-size:clamp(26px,3vw,44px);color:#fff}
+.p-hero-cap .p-term .lat{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase}
+
+.p-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:clamp(28px,6vw,110px);padding:clamp(48px,7vw,110px) var(--mx)}
+@media(max-width:900px){.p-body{grid-template-columns:1fr;gap:34px}}
+.p-facts{position:sticky;top:96px;align-self:start}
+@media(max-width:900px){.p-facts{position:static}}
+.p-facts dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
+.p-facts dt{
+  font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-45);font-weight:500;
+  padding:13px 20px 13px 0;border-top:1px solid var(--rule);white-space:nowrap;
+}
+.p-facts dd{margin:0;padding:13px 0;border-top:1px solid var(--rule);font-size:14px;line-height:1.45}
+.p-text p{margin:0 0 1.15em;font-size:clamp(15px,1.25vw,17.5px);line-height:1.62;color:var(--ink-70);max-width:62ch}
+.p-text p:first-child{
+  font-size:clamp(18px,1.8vw,24px);line-height:1.38;color:var(--ink);letter-spacing:-.015em;margin-bottom:1.3em;
+}
+.p-text blockquote{
+  margin:2em 0;padding-left:clamp(16px,2vw,28px);border-left:2px solid var(--accent);
+  font-family:"Newsreader",Georgia,serif;font-style:italic;font-weight:300;
+  font-size:clamp(19px,2.1vw,28px);line-height:1.34;color:var(--ink);max-width:36ch;letter-spacing:-.01em;
+}
+.p-credits{margin-top:2.6em;padding-top:18px;border-top:1px solid var(--rule)}
+.p-credits h4{margin:0 0 12px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-45);font-weight:500}
+.p-credits p{font-size:13px;line-height:1.6;color:var(--ink-70);margin:0;max-width:60ch}
+
+.p-plates{padding:0 var(--mx) clamp(48px,7vw,110px);display:grid;gap:clamp(12px,1.6vw,22px);grid-template-columns:repeat(12,1fr)}
+.p-plates figure{margin:0;grid-column:1/-1;background:var(--paper-3);overflow:hidden}
+.p-plates figure.half{grid-column:span 6}
+@media(max-width:860px){.p-plates figure.half{grid-column:1/-1}}
+.p-plates img{width:100%;height:auto}
+
+.p-nav{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:clamp(22px,3vw,38px) var(--mx);border-top:1px solid var(--rule);
+}
+.p-nav button{font-size:13px;letter-spacing:.02em;display:flex;align-items:center;gap:10px;transition:gap .4s var(--slow),color .3s var(--ease);color:var(--ink-70)}
+.p-nav button:hover{color:var(--ink);gap:16px}
+
+/* ============================================================
+   ARCHIVE TABLE
+   ============================================================ */
+.arch{border-top:1px solid var(--rule)}
+.arch-row{
+  display:grid;grid-template-columns:58px minmax(0,2fr) minmax(0,1.5fr) 1fr 86px;
+  gap:clamp(10px,2vw,28px);align-items:baseline;
+  padding:12px 0;border-bottom:1px solid var(--rule);
+  transition:background .4s var(--ease),padding-left .5s var(--slow);
+}
+.arch-row:hover{background:var(--paper-2);padding-left:12px}
+.arch-row.head{position:sticky;top:60px;background:var(--paper);z-index:5;border-bottom-color:var(--ink-20)}
+.arch-row.head:hover{padding-left:0;background:var(--paper)}
+.arch-row .c1{font-size:11px;color:var(--ink-45)}
+.arch-row .c2{font-size:15px;font-weight:500;letter-spacing:-.012em}
+.arch-row .c3,.arch-row .c4{font-size:13px;color:var(--ink-70)}
+.arch-row .c5{font-size:12px;color:var(--ink-45);justify-self:end;white-space:nowrap}
+.arch-row.head div{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-45);font-weight:500}
+.arch-row.linked{cursor:pointer}
+.arch-row.linked .c2{transition:color .35s var(--ease)}
+.arch-row.linked:hover .c2{color:var(--accent)}
+@media(max-width:820px){
+  .arch-row{grid-template-columns:42px 1fr auto;grid-template-areas:"c1 c2 c5" ". c3 c4";row-gap:3px}
+  .arch-row .c1{grid-area:c1}.arch-row .c2{grid-area:c2}.arch-row .c3{grid-area:c3}
+  .arch-row .c4{grid-area:c4;justify-self:end}.arch-row .c5{grid-area:c5}
+  .arch-row.head{display:none}
+}
+
+/* ============================================================
+   INFORMATION
+   ============================================================ */
+.info-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(22px,3vw,46px) clamp(22px,4vw,70px)}
+.info-block{grid-column:span 4}
+.info-block.wide{grid-column:1/8}
+.info-block.full{grid-column:1/-1}
+@media(max-width:980px){.info-block,.info-block.wide{grid-column:1/-1}}
+.info-block h3{
+  margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid var(--rule);
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);font-weight:500;
+}
+.info-block p{margin:0 0 1em;font-size:14.5px;line-height:1.6;color:var(--ink-70);max-width:52ch}
+.info-block p strong{color:var(--ink);font-weight:500}
+.info-block a.ln{border-bottom:1px solid var(--ink-20);transition:border-color .3s,color .3s}
+.info-block a.ln:hover{border-color:var(--accent);color:var(--accent)}
+.lede{font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:var(--ink);letter-spacing:-.012em;max-width:58ch}
+
+.list-rows{display:grid}
+.list-rows div{
+  display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:baseline;
+  padding:10px 0;border-bottom:1px solid var(--rule);font-size:13.5px;line-height:1.45;
+}
+.list-rows div b{font-weight:500;color:var(--ink-45);font-size:11.5px;letter-spacing:.05em}
+.list-rows div span{color:var(--ink-70)}
+.list-rows div span em{font-style:normal;color:var(--ink)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{padding:clamp(48px,7vw,110px) var(--mx) 34px;border-top:1px solid var(--rule);background:var(--paper-2)}
+.f-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-end;padding-bottom:clamp(36px,5vw,70px)}
+.f-word{
+  font-size:clamp(44px,13vw,190px);line-height:.8;letter-spacing:-.05em;font-weight:600;margin:0;
+}
+.f-word .ar{font-size:.52em;color:var(--ink-45);letter-spacing:0;margin-left:.16em}
+.f-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:28px 40px;padding-top:clamp(26px,3vw,44px);border-top:1px solid var(--rule)}
+.f-col h5{margin:0 0 10px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);font-weight:500}
+.f-col p,.f-col a{display:block;margin:0 0 4px;font-size:13.5px;line-height:1.5;color:var(--ink-70)}
+.f-col a{transition:color .3s}
+.f-col a:hover{color:var(--accent)}
+.f-base{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;margin-top:clamp(26px,3vw,44px);border-top:1px solid var(--rule);font-size:11px;letter-spacing:.07em;color:var(--ink-45)}
+
+/* to top */
+.totop{position:fixed;right:var(--mx);bottom:26px;z-index:55;width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--ink-20);background:color-mix(in srgb,var(--paper) 80%,transparent);
+  backdrop-filter:blur(10px);display:grid;place-items:center;opacity:0;pointer-events:none;
+  transition:opacity .4s var(--ease),transform .5s var(--slow),border-color .3s}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover{border-color:var(--ink);transform:translateY(-3px)}
+.totop svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.5}
+</style>
+</head>
+<body>
+
+<header class="bar on-hero" id="bar">
+  <a class="mark" href="#/" data-nav="home">
+    <span class="mark-name">L.E.FT</span>
+    <span class="mark-sub">Architects · Beirut &amp; New York</span>
+  </a>
+  <nav class="main">
+    <a href="#/work" data-nav="work">Work</a>
+    <a href="#/archive" data-nav="archive">Archive</a>
+    <a href="#/information" data-nav="information">Information</a>
+    <button class="tgl always" id="themeBtn" aria-label="Toggle colour scheme" title="Toggle colour scheme">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ================= HOME ================= -->
+<section class="view active" id="v-home">
+
+  <div class="hero">
+    <div class="hero-media">
+      <img src="img/arslan-mosque-1.jpg" alt="Amir Shakib Arslan Mosque, Moukhtara — white steel minaret beside the honey limestone of the eighteenth-century palace">
+    </div>
+    <div class="hero-credit">Amir Shakib Arslan Mosque, Moukhtara — Photograph Iwan Baan</div>
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        <span><i>L.E.FT</i></span>
+        <span><i>Architects</i></span>
+      </h1>
+      <div class="hero-aside">
+        <div class="meta">Beirut · New York</div>
+        <p>Architecture at the intersection of cultural and political production — where the specificity of a site is understood first as a social, political and economic context.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="statement-grid">
+      <p class="statement rv">We work at the edge of where <em>God built</em> — treating Islamic architecture not as a closed chapter, but as a living field.</p>
+      <div class="statement-body rv" data-d="1">
+        <p>L.E.FT was founded in New York by Ziad Jamaleddine and Makram el Kadi. The practice is dedicated to examining the intersections of cultural and political productions as they relate to the built environment.</p>
+        <p>With an interest in diverse programs, a focus on unconventional interpretations of design is posited, redefining the relationship between the object and both its context and its users — from a social as well as an aesthetic perspective.</p>
+        <p>Practice and research run as one loop. Studios taught at Columbia, Yale, Cornell, PennDesign and the American University of Beirut feed the commissions; the commissions deepen the scholarship; the scholarship is exhibited at Oslo, Milan, Sharjah and Jeddah.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEXICON -->
+  <div class="sec sec--tight">
+    <div class="sec-head rv">
+      <div class="meta"><span>01</span><span>The Lexicon</span></div>
+      <h2 class="sec-title">Five Arabic words<br>that organise the work</h2>
+    </div>
+    <div class="statement-body rv" data-d="1" style="margin-bottom:clamp(26px,3.4vw,52px)">
+      <p>Canonical architectural language has frequently masked alternative forms of spatial practice. Rather than borrowing Western typologies, the office works from the ambiguity and depth of Arabic spatial terms — drawing on historical ritual and social structure without revivalism or imitation.</p>
+    </div>
+    <div class="lex" id="lex"></div>
+  </div>
+
+  <!-- FEATURED -->
+  <div class="sec sec--tight">
+    <div class="sec-head rv">
+      <div class="meta"><span>02</span><span>Selected</span></div>
+      <h2 class="sec-title">Recent work</h2>
+    </div>
+    <div class="feat" id="feat"></div>
+  </div>
+
+  <!-- INDEX PREVIEW -->
+  <div class="sec sec--tight">
+    <div class="sec-head rv">
+      <div class="meta"><span>03</span><span>Index</span></div>
+      <h2 class="sec-title">Projects</h2>
+    </div>
+    <div class="index" id="homeIndex"></div>
+    <div style="padding-top:clamp(22px,3vw,40px)">
+      <a href="#/archive" class="meta" style="display:inline-flex;gap:10px;align-items:center;color:var(--ink)">
+        Full archive, 2001–2026 <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="view" id="v-work">
+  <div class="sec" style="padding-top:clamp(110px,13vw,190px)">
+    <div class="sec-head">
+      <div class="meta"><span>Work</span></div>
+      <h2 class="sec-title">Selected projects</h2>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="index" id="workIndex"></div>
+  </div>
+</section>
+
+<!-- ================= PROJECT ================= -->
+<section class="view" id="v-project"></section>
+
+<!-- ================= ARCHIVE ================= -->
+<section class="view" id="v-archive">
+  <div class="sec" style="padding-top:clamp(110px,13vw,190px)">
+    <div class="sec-head">
+      <div class="meta"><span>Archive</span></div>
+      <h2 class="sec-title">Complete works<br>2001 — 2026</h2>
+    </div>
+    <div class="statement-body" style="margin-bottom:clamp(24px,3vw,44px)">
+      <p>Built work, installations, competitions and speculative projects, listed together — in this practice they feed each other.</p>
+    </div>
+    <div class="arch" id="archive"></div>
+  </div>
+</section>
+
+<!-- ================= INFORMATION ================= -->
+<section class="view" id="v-information">
+  <div class="sec" style="padding-top:clamp(110px,13vw,190px)">
+    <div class="sec-head">
+      <div class="meta"><span>Information</span></div>
+      <h2 class="sec-title">The practice</h2>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-block full" style="margin-bottom:clamp(14px,2vw,30px)">
+        <p class="lede">L.E.FT was founded in New York in 2004 by Ziad Jamaleddine and Makram el Kadi. The office was a member of <em>Architectural Record</em>'s 2010 Design Vanguard for top firms in the United States, and was selected to the AD100, The Best Designers in the Middle East and North Africa (2025).</p>
+      </div>
+
+      <div class="info-block wide">
+        <h3>Profile</h3>
+        <p>Established in New York, L.E.FT is dedicated to examining the intersections of cultural and political productions as they relate to the built environment.</p>
+        <p>Spatial qualities as well as programmatic typologies are understood in their importance and role within a specific social context. The specificity of a &lsquo;Site&rsquo; is thus understood not only as a physical context within which one is designing, but primarily as a socio-political and economical context.</p>
+        <p>The office&rsquo;s research and design work has been exhibited at Oslo Architecture Triennale (2016), Studio-X Istanbul (2017), Milan Triennale (2019), Sharjah Architecture Triennial (2019 and 2026) and the Jeddah Islamic Arts Biennale (2023).</p>
+      </div>
+
+      <div class="info-block">
+        <h3>Contact</h3>
+        <p><strong>United States</strong><br>438 West 116th St, Suite 42<br>New York, NY 10027<br>T +1 917 783 8498</p>
+        <p><strong>Lebanon</strong><br>Spears Bldg, Phoenicia Street<br>Ground Floor, Beirut<br>T +961 1 37 33 51</p>
+        <p><a class="ln" href="mailto:left@leftish.net">left@leftish.net</a><br>
+           <a class="ln" href="https://www.instagram.com/leftarchitects/">@leftarchitects</a></p>
+      </div>
+
+      <div class="info-block wide">
+        <h3>Principals</h3>
+        <p><strong>Ziad Jamaleddine</strong> — B.Arch, American University of Beirut (Areen Award); M.Arch, Harvard GSD. Steven Holl Architects, 1999–2005, assistant project architect on Simmons Hall, MIT. Assistant Professor of Architecture and Urban Design at Columbia GSAPP, where he coordinates the Advanced IV sequence and is faculty of the Post-Conflict Cities Lab. Guest editor of <em>Architectural Design</em> 97.4, <em>Arab Ground — Sacred, Secular, Shared</em>.</p>
+        <p><strong>Makram el Kadi</strong> — B.Arch, American University of Beirut; M.Arch, Parsons. Fumihiko Maki, Tokyo; Steven Holl Architects, 2000–2005, project designer on the World Trade Center proposal and the Natural History Museum of Los Angeles County. Runs the Beirut office. Senior Lecturer at the American University of Beirut; formerly Louis I. Kahn Visiting Assistant Professor at Yale and Aga Khan Visiting Lecturer at MIT.</p>
+      </div>
+
+      <div class="info-block">
+        <h3>Publication</h3>
+        <p><strong>At the Edge of Where God Built: Language. Concepts. Islamic Architecture.</strong><br>Ziad Jamaleddine, Makram el Kadi and L.E.FT Architects. Edited by Ashley Simone. Actar Publishers, 2026.</p>
+        <p>A decade of the practice reorganised around five Arabic spatial terms, arguing that Islamic architecture is a living field rather than a chapter closed in the nineteenth century. Supported by the Graham Foundation.</p>
+      </div>
+
+      <div class="info-block full" style="margin-top:clamp(16px,2.4vw,36px)">
+        <h3>Selected awards</h3>
+        <div class="list-rows" id="awards"></div>
+      </div>
+
+      <div class="info-block full" style="margin-top:clamp(16px,2.4vw,36px)">
+        <h3>Selected exhibitions</h3>
+        <div class="list-rows" id="exhibitions"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="peek"><img alt="" src="" decoding="async"></div>
+
+<button class="totop" id="totop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<footer>
+  <div class="f-top">
+    <p class="f-word">L.E.FT<span class="ar">يسار</span></p>
+    <div style="max-width:30ch">
+      <p style="margin:0;font-size:14px;line-height:1.55;color:var(--ink-70)">
+        The fight against fundamentalism is above all a cultural war of ideas, and architecture is one of its weapons.
+      </p>
+      <p class="meta" style="margin:12px 0 0">— On the Amir Shakib Arslan Mosque</p>
+    </div>
+  </div>
+  <div class="f-cols">
+    <div class="f-col">
+      <h5>New York</h5>
+      <p>438 West 116th St, Suite 42<br>New York, NY 10027</p>
+      <a href="tel:+19177838498">+1 917 783 8498</a>
+    </div>
+    <div class="f-col">
+      <h5>Beirut</h5>
+      <p>Spears Bldg, Phoenicia Street<br>Ground Floor</p>
+      <a href="tel:+96113733 51">+961 1 37 33 51</a>
+    </div>
+    <div class="f-col">
+      <h5>Enquiries</h5>
+      <a href="mailto:left@leftish.net">left@leftish.net</a>
+      <a href="https://www.instagram.com/leftarchitects/">Instagram</a>
+    </div>
+    <div class="f-col">
+      <h5>Navigate</h5>
+      <a href="#/work">Work</a>
+      <a href="#/archive">Archive</a>
+      <a href="#/information">Information</a>
+    </div>
+  </div>
+  <div class="f-base">
+    <span>© L.E.FT Architects</span>
+    <span>Beirut · New York</span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+const TERMS = [
+  {k:'tawaf', ar:'طواف', lat:'ṭawāf',  gloss:'The space of circumambulation — sacralising what is endangered by compelling the visitor to walk around it.'},
+  {k:'jami',  ar:'جامع', lat:'jāmiʿ',  gloss:'Mosque space, expanded past the type into community gathering with a deep social programme.'},
+  {k:'riwaq', ar:'رواق', lat:'riwāq',  gloss:'The colonnade of a courtyard — generating adaptive shading devices for the urban ground.'},
+  {k:'dar',   ar:'دار',  lat:'dār',    gloss:'Domestic space, reinterpreted as collective ground shared by extended family networks.'},
+  {k:'khirba',ar:'خربة', lat:'khirba', gloss:'The ruin — renewal that preserves the latent community value held inside what is already there.'}
+];
+const T = Object.fromEntries(TERMS.map(t=>[t.k,t]));
+
+const P = [
+{
+  id:'arslan-mosque', n:'01', title:'Amir Shakib Arslan Mosque', loc:'Moukhtara, Lebanon', year:'2016—17', term:'jami',
+  images:['arslan-mosque-1','arslan-mosque-2'],
+  facts:[['Location','Moukhtara, Shouf, Lebanon'],['Completed','2016'],['Area','100 m²'],['Type','Religious — renovation and addition'],
+         ['Awards','Faith &amp; Form, Best in Religious Architecture &amp; Art, 2017 · Interfaith Design Award, AIA &amp; Partners for Sacred Places, 2018 · Al Fozan Award for Mosque Architecture, 2022']],
+  text:[
+    'The design occupies a renovated cross-vaulted space beside the eighteenth-century Arslan palace, with the addition of a steel structure and a plaza carved out of what had been parking.',
+    'The slender minaret is formed of thinly sliced steel plates, angled in the direction of Makkah, and linked horizontally through a canopy to a curved wall delineating the entry to the mosque. Atop the minaret, the word <em>Allah</em> is folded biaxially from the minaret, becoming a structural calligraphy rather than a traditional ornamental applique. Seen from one side, Allah is read as solid; from the other side, Allah is read as a void.',
+    'Below, at the entry to the mosque, the word <em>Insan</em> — human being — is added to the steel plates, to create a Hegelian dialectic of God/Man, putting humanity as an integral part of the equation with God, as a reminder of the humanistic tradition of Islam.',
+    'A historic water fountain was reactivated for the whole village rather than for worshippers alone. The prayer carpet, designed with the artist Lawrence Abu Hamdan, is inscribed with sonic patterns drawn from the call to prayer — and deliberately excludes the word Allah from a surface that is walked upon.'
+  ],
+  quote:'The fight against fundamentalism is above all a cultural war of ideas, and architecture is one of its weapons.',
+  credits:'L.E.FT team: Makram el Kadi, Ziad Jamaleddine, Gentley Smith (project architect), Rafah Farhat, Elias Kateb, Alex Palmer, Shun-Ping Liu, Melissa Sofian, Tong Shu. Conservation architect: Zaher Ghossaini. Structural engineer: Antoine Bou Chedid. Steel: ACID. Call to prayer: Lawrence Abu Hamdan &amp; Nisrine Khodr. Carpet: Lawrence Abu Hamdan with L.E.FT. Photography: Ieva Saudargaite, Iwan Baan.'
+},
+{
+  id:'djerba-366', n:'02', title:'Djerba: Prototype 366', loc:'Islamic Arts Biennale, Jeddah', year:'2023', term:'tawaf',
+  images:['djerba-366-2','djerba-366-1'],
+  facts:[['Venue','Western Hajj Terminal, Jeddah — SOM, 1981'],['Curator','Sumayya Vally'],['Year','2023'],
+         ['With','Iheb Guermazi and Beya Othmani'],['Recognition','Finalist, AZ Awards 2025 — Experiential Installations']],
+  text:[
+    'The Tunisian island of Djerba holds 365 mosques — small in scale and family-run, reflecting a delicate balance between its Sunni, Ibadi, Jewish, Arab and Berber communities. The installation proposes the 366th, adapted to Jeddah.',
+    'All Jerbian mosques shared one thing: deconstructing the Islamic prayer space of worship to its most basic components. Here that deconstruction is literal. A circular form of cold-rolled carbon steel, its plates etched with the plans of representative Jerban mosques, surrounds a central pile of basalt rocks ninety centimetres tall and five metres across, echoing the island&rsquo;s topography.',
+    'Embedded in the stone, at one-to-one scale, are the only elements a mosque strictly requires: a standalone mihrab, a wash basin, and a seat. Made for the first edition of the Islamic Arts Biennale, in the Hajj terminal through which millions of pilgrims pass.'
+  ],
+  credits:'L.E.FT Architects with Iheb Guermazi and Beya Othmani. Photography: Laurian Ghinițoiu.'
+},
+{
+  id:'tawaf', n:'03', title:'Tawaf: A Genealogy of a Tree', loc:'XXII Triennale di Milano', year:'2019', term:'tawaf',
+  images:['tawaf-1'],
+  facts:[['Exhibition','Lebanese Pavilion, XXII Triennale — <em>Broken Nature</em>'],['Dates','1 March – 1 September 2019'],
+         ['Commissioner','Ministry of Culture, Lebanon'],['Co-curators','Shouf Biosphere Reserve, Georges Arbid and L.E.FT']],
+  text:[
+    'Tawaf, in the Islamic faith, is the devotional act of circling counterclockwise around the Kaaba during the Hajj season. The act of rotating around a sacred object can also be found in Christian, Jewish, Hindu and Buddhist devotional practice.',
+    'The installation spatialises the cross section of a cedar tree trunk from the Shouf Biosphere, the largest cedar reserve in Lebanon, into a circular floor-map carpet. The interpretive tree &lsquo;map&rsquo;, through its growth rings, unpacks the biblical, literary, popular and political imaginaries of the Lebanese cedar across its geological timeline into a new cultural dendrochronology.',
+    'It sets out to unravel the nineteenth-century colonial environmental history in which Mount Lebanon&rsquo;s forest was a lush landscape degraded only recently by its own inhabitants — a story that paved the way for a larger imperial project of territorial and economic control, disguised as the restoration of the land&rsquo;s &lsquo;ancient fertility&rsquo;. Against it the work sets a twelve-thousand-year timeline, relocating the forest&rsquo;s shrinking ecology to the last ice age.',
+    'The visitor must circumambulate the rings to read it.'
+  ],
+  quote:'What emerges is not an &lsquo;immortal&rsquo; symbol of the nation, but a complicated narrative situated at the intersection of geological history, the colonial environmental imaginary, and climate change.',
+  credits:'L.E.FT Architects: Makram el Kadi, Ziad Jamaleddine, Rami el Murr, Ibrahim Kombarji. Research: Mayrah Udvardi. Shouf Reserve: Nizar Hani, Lina Sarkis, Mirko Panichi, Sarah Nasrallah. Video: Josh Haner / The New York Times. Photography: Bahaa Ghoussainy, PierCarlo Quecchia.'
+},
+{
+  id:'pratt-house', n:'04', title:'Pratt House', loc:'Vassar College, Poughkeepsie, New York', year:'2023', term:'khirba',
+  images:['pratt-house-1','pratt-house-3','pratt-house-2'],
+  facts:[['Client','Vassar College'],['Completed','2023'],['Type','Adaptive reuse — Office of Religious and Spiritual Life and Contemplative Practices'],
+         ['Awards','Interfaith Design Award, Adaptive Re-Use, 2024 · LOOP Design Awards, Religious &amp; Spiritual, 2024']],
+  text:[
+    'A Gothic Revival house built in 1915 as the living quarters of the college warden, converted into a multifaith centre now serving twelve religious and spiritual groups — for prayer and meditation, but also for cooking, dining and gathering.',
+    'The floor slab above the first floor was removed to open a double-height prayer and meditation room. The ground level holds staff offices, a conference room, and a <em>wudu</em> station for the ritual washing performed before prayer — designed to be fully accessible, so that the washing of feet can be carried out from a wheelchair. Little precedent for this existed.',
+    'On the outlying grounds, a processional meditation labyrinth was co-designed with Vassar faculty who specialise in ancient ritual sites, and built from construction waste upcycled from earlier college projects — brick and bluestone that were already on the campus.'
+  ],
+  credits:'Design team: Makram el Kadi, Sixuan Chen, Stephan Anton van Eeden, Ziad Jamaleddine.'
+},
+{
+  id:'exhibition-center', n:'05', title:'Beirut Exhibition Center', loc:'Downtown Beirut', year:'2011', term:'khirba',
+  images:['exhibition-center-1'],
+  facts:[['Client','Solidere'],['Completed','2011'],['Area','1,200 m²'],['Type','Cultural — re-clad temporary structure'],['Recognition','Core77 Design Award, 2011']],
+  text:[
+    'Set in the new landfill area of downtown Beirut, the centre was the first structure dedicated to contemporary art in the waterfront development. An existing prefabricated hangar — relocated from a nearby site, previously a children&rsquo;s entertainment centre — was reconfigured inside and given a new skin.',
+    'With a constantly shifting and temporary context at the urban scale setting an unfolding new skyline for the city, and constantly shifting temporary exhibitions on the inside, the architecture — housed itself in a temporary structure — is trapped in a dynamic state of limbo.',
+    'The skin, in custom corrugated anodised mirror aluminium, becomes an index for the growth of the city: a place holder that derives its identity from that of the ever changing context. The mirror cladding refutes shadows, accentuating the placeless nature of the building — a heterotopian condition that provides a space for self-reflection and a new critical view of the city. The building sits in a reflecting pool; a bamboo grove to the north and a sculpture garden to the south frame it.'
+  ],
+  quote:'The city becomes a work of art, an abstract expressionist painting in motion. Beirut finally sees itself in the mirror.',
+  credits:'L.E.FT team: Daniel Colvard, Makram el Kadi, Ziad Jamaleddine, Cindy Moon, Mahdi Sabbagh, Karie Titus, Karine Yassine. Photography: Joe Kesrouani.'
+},
+{
+  id:'barakat-gallery', n:'06', title:'Saleh Barakat Gallery', loc:'Clemenceau, Beirut', year:'2016', term:'khirba',
+  images:['barakat-gallery-2','barakat-gallery-1'],
+  facts:[['Client','Saleh Barakat'],['Completed','2016'],['Area','900 m²'],['Type','Adaptive reuse of a subterranean theatre']],
+  text:[
+    'An adaptive reuse of a historic theatre, Masrah al-Madina, converted into a space dedicated to showcasing prominent as well as emerging Lebanese and Arab artists — one of the largest galleries in Beirut.',
+    'Before being transformed in the 1990s into a theatre, the underground space was, as early as 1969, one of the first cinemas in the Middle East to project the art and experimental films of Fellini and Gavras, as well as Soviet cinema.',
+    'Located mostly underground, the attempt was to create a smooth transition from the street level to the lower gallery levels — from the sidewalk to the catwalk — while bringing natural light into the buried space. The cascading stair borrows from the nearby Modernist buildings that historically formed Hamra street, particularly in the way those buildings intersected the ground with a robust system of shallow and steep stairways mediating commercial levels with the bustling street life.',
+    'The theatre ceiling was renovated to highlight its steel catwalks, transforming them into a repository for the gallery lighting. An electric chain hoist, usually hidden back of house, is fore-fronted on exposed I-beams and carries artwork crates down into the main gallery. Storage aisles either side became intimate galleries: the back of house becomes part of the foregrounded experience of art.'
+  ],
+  credits:'L.E.FT team: Ana Conchan, Alex Palmer, Valeria Fervorari, Rafah Farhat, Elias Kateb. Contractor: MEC Consultant. Photography: Ieva Saudargaite.'
+},
+{
+  id:'many-vaults', n:'07', title:'House of Many Vaults', loc:'Niha, Shouf, Lebanon', year:'2019', term:'dar', pos:'50% 72%',
+  images:['many-vaults-2','many-vaults-1'],
+  facts:[['Client','Youssef Ghaith'],['Completed','2019'],['Area','2,000 m² — 30 × 30 m'],['Type','House']],
+  text:[
+    'Perched along the edge of the Shouf Mountains and overlooking the Mediterranean, the residence sits below the shrine of the prophet Job, in the village of Niha — one of the most visited religious sites in Lebanon.',
+    'The house is a reinterpretation of the cross-vaulted houses that donned the local mountainous landscape at the turn of the century. A series of vaults, each pertaining to a different residential programme, scale up both in plan and in section in ascending slopes towards the view, and intersect with perpendicular vaults to create access points for circulation.',
+    'The historic volume is redefined — from a normative pitched roof sitting on a box with cross vaults below, collapsing into a new geometry where the roof becomes pitched from above, vaulted from below and twisted from the sides to form the rectangular base.'
+  ],
+  quote:'Akin to a prostration position, the house kneels at its lowest towards the shrine, and opens up at its highest towards the view.',
+  credits:'L.E.FT team: Daniel Colvard, Fumio Hirakawa, Karie Titus, Ana Conchan, Valeria Fervorari, Carla Hobeika, Khalil Melki. Structural &amp; MEP: Rafik el Khoury &amp; Partners. Landscape: Vladimir Djurovic Landscape Architecture. Contractor: ACON. Photography: Bahaa Ghoussainy.'
+},
+{
+  id:'room-extension', n:'08', title:'Room Extension', loc:'Clemenceau, Beirut', year:'2022', term:'khirba', pos:'50% 38%',
+  images:['room-extension-1','room-extension-2'],
+  facts:[['Location','Clemenceau, Beirut'],['Completed','2022'],['Type','Canopy and garden room']],
+  text:[
+    'A small intervention nested in an interstitial, residual site within the dense urban fabric of Beirut&rsquo;s Clemenceau district — built around a single surviving stone pine.',
+    'That tree is a remnant of the expansive pine grove corridor that once ringed historic Beirut. A light structural canopy embraces it, reclaiming its ecological performance and referencing the trees still standing in the domestic gardens of abandoned houses across a historic but neglected neighbourhood.',
+    'The project belongs to the practice&rsquo;s ongoing work on <em>khirba</em> — the ruin held not as a static monument but as a flexible space carrying latent community value.'
+  ],
+  credits:'Photography: Bahaa Ghoussainy.'
+},
+{
+  id:'business-park', n:'09', title:'Waterfront City Business Park', loc:'Dbayeh, Lebanon', year:'2015', term:'riwaq', pos:'50% 60%',
+  images:['business-park-1','business-park-2'],
+  facts:[['Client','Majid Al Futtaim Properties &amp; Societé Joseph Khoury'],['Completed','2015'],
+         ['Scale','12 buildings, 5–6 storeys · 360 × 75 m'],['Type','The first business park in Lebanon']],
+  text:[
+    'Ideally located ten kilometres outside downtown Beirut, along a seven-hundred-berth marina overlooking the Mediterranean, the design of the first business park in Lebanon was an opportunity to build a pioneering environment where different businesses can thrive in a collaborative and communal urban space.',
+    'Twelve buildings of grade A offices, ranging in height from five to six floors, share a car-free, pedestrian-only ground plane with a series of open landscaped plazas — and a ground floor that offers a multitude of office-related retail experiences, from food and beverage to office supplies and meeting venues.',
+    'The shaded, colonnaded ground is the <em>riwaq</em>: the courtyard&rsquo;s portico, scaled up to a district.'
+  ],
+  credits:'L.E.FT team: Alex Palmer (project architect), Makram el Kadi, Rami el Murr, Bahaa Ghossaini, Ziad Jamaleddine, Gentley Smith, Malek Sadder, Elias Kateb, Shun-Ping Liu. Architect of record and structural: Rafik el Khoury &amp; Partners. Landscape: L.E.FT + SOME Existing Trees.'
+},
+{
+  id:'basmala', n:'10', title:'Basmala — Praygrounds', loc:'Studio-X Istanbul', year:'2017', term:'jami',
+  images:['basmala-1','basmala-2'],
+  facts:[['Venue','Studio-X Istanbul'],['Dates','17 March – 21 April 2017'],['Type','Exhibition']],
+  text:[
+    'The exhibition that gathered a decade of mosque research and the newly completed Amir Shakib Arslan Mosque into a single argument.',
+    'Three curtain-enclosed spaces, each shrouded with its own dialectic printed on the surface of the enclosure — <em>Insan</em> (human being) / <em>Allah</em> (God); Man / Woman; Construction / Destruction. Between the three spaces were rows of drawings and photographic documentation of the mosque.',
+    'The exhibit was introduced by the Basmala: a glowing scripture facing the street. The <em>basmala</em> is the act of reciting <em>bismillāh</em> — in the name of God. The exhibition grounded itself in this mental faculty, the act of reciting rather than the recited phrase itself, as an intellectual critical exercise when seeking to understand the architectural history of the mosque.'
+  ],
+  credits:'Photography: Sahir Uğur Eren. Presented with Columbia GSAPP Studio-X.'
+}
+];
+
+/* full archive — every project, 2001–2026 */
+const ARCHIVE = [
+ ['2026','Al Shariah Mosque Intersection','Jabal Al Lweibdeh, Amman','Public space — permanent',''],
+ ['2026','Lalla Alwyia, Khalwa','Sharjah Architecture Triennial','Installation',''],
+ ['2025','Ex Oriente Lux — Lebanese War Memorial','Lebanon','Competition',''],
+ ['2023','Djerba: Prototype 366','Islamic Arts Biennale, Jeddah','Installation','djerba-366'],
+ ['2023','Pratt House','Vassar College, New York','Adaptive reuse','pratt-house'],
+ ['2022','Room Extension','Clemenceau, Beirut','Canopy','room-extension'],
+ ['2022','Center for Human Rights &amp; the Arts','Bard College, Red Hook, New York','Adaptive reuse',''],
+ ['2019','House of Many Vaults','Niha, Shouf, Lebanon','House','many-vaults'],
+ ['2019','Tawaf: A Genealogy of a Tree','XXII Triennale di Milano','Lebanese Pavilion','tawaf'],
+ ['2018','Qortuba Oasis Clubhouse','Riyadh, Saudi Arabia','Residential compound',''],
+ ['2017','Basmala — Praygrounds','Studio-X Istanbul','Exhibition','basmala'],
+ ['2016','Amir Shakib Arslan Mosque','Moukhtara, Lebanon','Religious','arslan-mosque'],
+ ['2016','Saleh Barakat Gallery','Clemenceau, Beirut','Gallery','barakat-gallery'],
+ ['2016','Out-to-Out House','Faqra, Lebanon','House',''],
+ ['2016','Flip House','Shimlan, Lebanon','House',''],
+ ['2015','Waterfront City Business Park','Dbayeh, Lebanon','Commercial','business-park'],
+ ['2015','Boat Hotel','Zamalek, Cairo','Hospitality',''],
+ ['2014','Walker Penthouse','Tribeca, New York','Interior',''],
+ ['2011','Beirut Exhibition Center','Downtown Beirut','Cultural','exhibition-center'],
+ ['2011','Baabdat House','Baabdat, Lebanon','House',''],
+ ['2011','Moschea del Mondo','Prague Quadrennial','Installation',''],
+ ['2011','The City of Islams','Oslo · Istanbul · Milan · Sharjah','Research &amp; installation',''],
+ ['2010','Vertical Landscape Urbanism','Holmestrand, Norway','Urban infrastructure',''],
+ ['2009','Crosby Apartment','New York','Interior',''],
+ ['2008','Loft Barn','Bridgehampton, New York','House',''],
+ ['2007','Offshore Urbanism','Lebanon','Speculative',''],
+ ['2006','20 Peacocks','Lower East Side, New York','Retail interior',''],
+ ['2006','Terminal City','Dubai','Speculative',''],
+ ['2006','Akbuk Peninsula Dense Pack','Akbuk, Turkey','Housing',''],
+ ['2005','disOrientalism','Washington DC','Competition — first prize',''],
+ ['2004','Crosby Street','New York','Interior',''],
+ ['2004','Squattville','Levittown, New York','Speculative',''],
+ ['2002','Home Sweets Home','New Jersey','House',''],
+ ['2001','Beirut Marina — Zaitunay Bay','Downtown Beirut','Urban — with Steven Holl Architects',''],
+ ['2001','OneDoor House','Lebanon','Speculative','']
+];
+
+const AWARDS = [
+ ['2026','Honorable Mention, <em>The Architect&rsquo;s Newspaper</em> Best of Practice — Architect (Small Firm), Northeast'],
+ ['2025','AD100 — The Best Designers in the Middle East and North Africa'],
+ ['2025','Finalist, AZ Awards — Experiential Installations'],
+ ['2024','Interfaith Design Award, AIA &amp; Partners for Sacred Places — Adaptive Re-Use'],
+ ['2024','LOOP Design Awards — Religious &amp; Spiritual'],
+ ['2022','Al Fozan Award for Mosque Architecture'],
+ ['2018','Interfaith Design Award, AIA &amp; Partners for Sacred Places — Religious Architecture'],
+ ['2018','Cityscape Global Award — Residential Low-to-Medium-Rise, Built'],
+ ['2017','<em>Faith &amp; Form</em> — Best in Religious Architecture &amp; Art'],
+ ['2017','Architectural Digest Middle East — Top 5 Urbanists'],
+ ['2011','Core77 Design Award'],
+ ['2010','Emerging Voices, The Architectural League of New York'],
+ ['2010','Design Vanguard, <em>Architectural Record</em>'],
+ ['2005','First Prize — Arab Cultural Center ideas competition, Washington DC'],
+ ['2002','Young Architects Award, The Architectural League of New York']
+];
+
+const EXHIBITIONS = [
+ ['2026','Sharjah Architecture Triennial — <em>Architecture Otherwise</em>'],
+ ['2026','Amman Design Week — <em>Accumulations</em>'],
+ ['2025','Venice Biennale, 19th International Architecture Exhibition — <em>Rooted Transience</em>'],
+ ['2023','Islamic Arts Biennale, Jeddah'],
+ ['2019','Sharjah Architecture Triennial — <em>Rights of Future Generations</em>'],
+ ['2019','XXII Triennale di Milano — <em>Broken Nature</em>, Lebanese Pavilion'],
+ ['2017','Studio-X Istanbul — <em>Praygrounds</em>'],
+ ['2016','Oslo Architecture Triennale — <em>After Belonging</em>'],
+ ['2011','Prague Quadrennial of Performance Design and Space'],
+ ['2009','MoMA / PS1 Young Architects Program — Finalist']
+];
+
+/* ============================================================
+   BUILD
+   ============================================================ */
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+
+/* --- lexicon --- */
+$('#lex').innerHTML = TERMS.map(t=>{
+  const c = P.filter(p=>p.term===t.k).length;
+  return `<button class="lex-row" data-term="${t.k}">
+    <span class="lex-ar">${t.ar}</span>
+    <span class="lex-latin">${t.lat}<small>${t.k}</small></span>
+    <span class="lex-gloss">${t.gloss}</span>
+    <span class="lex-count"><span class="num">${String(c).padStart(2,'0')} ${c===1?'project':'projects'}</span><span class="arrow">→</span></span>
+  </button>`;
+}).join('');
+
+/* --- featured --- */
+const FEAT = ['arslan-mosque','djerba-366','many-vaults','barakat-gallery'];
+const FCLS = ['f-a','f-b','f-c','f-d'];
+$('#feat').innerHTML = FEAT.map((id,i)=>{
+  const p = P.find(x=>x.id===id);
+  return `<figure class="${FCLS[i]} rv" data-d="${i%3}" data-go="${p.id}">
+    <div class="wrap"><img src="img/${p.images[0]}-sm.jpg" alt="${p.title}" loading="lazy" decoding="async"></div>
+    <figcaption><b>${p.title}</b><span>${p.loc} · ${p.year}</span></figcaption>
+  </figure>`;
+}).join('');
+
+/* --- index rows --- */
+function rowsHTML(list){
+  return list.map(p=>`<button class="idx" data-go="${p.id}" data-term="${p.term}" data-img="img/${p.images[0]}-sm.jpg">
+    <span class="idx-n num">${p.n}</span>
+    <span class="idx-t">${p.title}</span>
+    <span class="idx-l">${p.loc}</span>
+    <span class="idx-y num">${p.year}</span>
+    <span class="idx-term"><span class="ar">${T[p.term].ar}</span><span class="lat">${T[p.term].lat}</span></span>
+  </button>`).join('');
+}
+$('#homeIndex').innerHTML = rowsHTML(P.slice(0,6));
+$('#workIndex').innerHTML = rowsHTML(P);
+
+/* --- filters --- */
+$('#filters').innerHTML =
+  `<button data-f="all" aria-pressed="true">All work</button>` +
+  TERMS.map(t=>`<button data-f="${t.k}" aria-pressed="false">${t.lat}<span class="ar">${t.ar}</span></button>`).join('');
+
+$('#filters').addEventListener('click',e=>{
+  const b = e.target.closest('button'); if(!b) return;
+  applyFilter(b.dataset.f);
+});
+function applyFilter(f){
+  $$('#filters button').forEach(x=>x.setAttribute('aria-pressed', String(x.dataset.f===f)));
+  $$('#workIndex .idx').forEach(r=>{ r.hidden = !(f==='all' || r.dataset.term===f); });
+}
+
+/* --- archive --- */
+$('#archive').innerHTML =
+  `<div class="arch-row head"><div>Year</div><div>Project</div><div>Location</div><div>Type</div><div></div></div>` +
+  ARCHIVE.map(([y,t,l,k,id])=>`<div class="arch-row ${id?'linked':''}" ${id?`data-go="${id}"`:''}>
+    <div class="c1 num">${y}</div><div class="c2">${t}</div><div class="c3">${l}</div><div class="c4">${k}</div>
+    <div class="c5">${id?'View →':''}</div>
+  </div>`).join('');
+
+/* --- info lists --- */
+const rowList = a => a.map(([y,t])=>`<div><b class="num">${y}</b><span>${t}</span></div>`).join('');
+$('#awards').innerHTML = rowList(AWARDS);
+$('#exhibitions').innerHTML = rowList(EXHIBITIONS);
+
+/* ============================================================
+   PROJECT VIEW
+   ============================================================ */
+function renderProject(p){
+  const i = P.indexOf(p);
+  const prev = P[(i-1+P.length)%P.length], next = P[(i+1)%P.length];
+  const plates = p.images.slice(1);
+  const platesHTML = plates.length ? `<div class="p-plates">${
+      plates.map((im,k)=>`<figure class="${plates.length>1 && k>0 ? 'half':''}"><img src="img/${im}.jpg" alt="${p.title}" loading="lazy" decoding="async"></figure>`).join('')
+    }</div>` : '';
+
+  $('#v-project').innerHTML = `
+    <div class="p-hero">
+      <img src="img/${p.images[0]}.jpg" alt="${p.title}" style="object-position:${p.pos||'50% 48%'}">
+      <div class="p-hero-cap">
+        <h1>${p.title}</h1>
+        <div class="p-term"><span class="ar">${T[p.term].ar}</span><span class="lat">${T[p.term].lat}</span></div>
+      </div>
+    </div>
+    <div class="p-body">
+      <div class="p-facts">
+        <dl>${p.facts.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>
+      </div>
+      <div class="p-text">
+        ${p.text.map(t=>`<p>${t}</p>`).join('')}
+        ${p.quote?`<blockquote>${p.quote}</blockquote>`:''}
+        ${p.credits?`<div class="p-credits"><h4>Credits</h4><p>${p.credits}</p></div>`:''}
+      </div>
+    </div>
+    ${platesHTML}
+    <div class="p-nav">
+      <button data-go="${prev.id}"><span aria-hidden="true">←</span> ${prev.title}</button>
+      <button data-go="${next.id}">${next.title} <span aria-hidden="true">→</span></button>
+    </div>`;
+}
+
+/* ============================================================
+   ROUTER
+   ============================================================ */
+const VIEWS = ['home','work','project','archive','information'];
+function route(){
+  const h = location.hash.replace(/^#\/?/,'') || '';
+  const [seg,arg] = h.split('/');
+  let v = 'home';
+
+  if(seg==='work') v='work';
+  else if(seg==='archive') v='archive';
+  else if(seg==='information') v='information';
+  else if(seg==='project' && arg){
+    const p = P.find(x=>x.id===arg);
+    if(p){ renderProject(p); v='project'; }
+  }
+
+  VIEWS.forEach(n=>$('#v-'+n).classList.toggle('active', n===v));
+  $$('nav.main a[data-nav]').forEach(a=>{
+    const t=a.dataset.nav;
+    a.setAttribute('aria-current', String(t===v || (v==='project'&&t==='work')));
+  });
+
+  document.body.dataset.view = v;
+  updateBar();
+  observeAll();
+  window.scrollTo({top:0,behavior:'instant'});
+}
+window.addEventListener('hashchange',route);
+
+/* delegated navigation */
+document.addEventListener('click',e=>{
+  const go = e.target.closest('[data-go]');
+  if(go){ location.hash = '#/project/'+go.dataset.go; return; }
+  const lex = e.target.closest('.lex-row');
+  if(lex){ location.hash='#/work'; setTimeout(()=>applyFilter(lex.dataset.term),60); }
+});
+
+/* ============================================================
+   HOVER PREVIEW
+   ============================================================ */
+const peek = $('#peek'), peekImg = peek.querySelector('img');
+let px=0,py=0,tx=0,ty=0,raf=null;
+function loop(){
+  px += (tx-px)*.13; py += (ty-py)*.13;
+  peek.style.transform = `translate(${px}px,${py}px) translate(-50%,-50%) scale(${peek.classList.contains('on')?1:.94})`;
+  raf = requestAnimationFrame(loop);
+}
+document.addEventListener('pointermove',e=>{ tx=e.clientX; ty=e.clientY; },{passive:true});
+document.addEventListener('pointerover',e=>{
+  const r = e.target.closest('.idx');
+  if(r && r.dataset.img){
+    if(peekImg.getAttribute('src')!==r.dataset.img) peekImg.src = r.dataset.img;
+    peek.classList.add('on');
+    r.closest('.index')?.classList.add('hovering');
+    if(!raf){ px=tx; py=ty; loop(); }
+  }
+});
+document.addEventListener('pointerout',e=>{
+  const r = e.target.closest('.idx');
+  if(r && !r.contains(e.relatedTarget)){
+    peek.classList.remove('on');
+    r.closest('.index')?.classList.remove('hovering');
+  }
+});
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+let io;
+function observeAll(){
+  io?.disconnect();
+  io = new IntersectionObserver(es=>{
+    es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  $$('.view.active .rv').forEach(el=>io.observe(el));
+}
+
+/* ============================================================
+   HEADER + TO-TOP
+   ============================================================ */
+const bar = $('#bar'), totop = $('#totop');
+function updateBar(){
+  const onHome = document.body.dataset.view==='home' || document.body.dataset.view==='project';
+  const y = window.scrollY;
+  const heroH = onHome ? Math.max(window.innerHeight*0.6, 320) : 0;
+  bar.classList.toggle('on-hero', onHome && y < heroH);
+  bar.classList.toggle('solid', y > 24 && !(onHome && y < heroH));
+  totop.classList.toggle('on', y > window.innerHeight);
+}
+window.addEventListener('scroll',updateBar,{passive:true});
+window.addEventListener('resize',updateBar);
+totop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============================================================
+   THEME
+   ============================================================ */
+const root = document.documentElement;
+const saved = localStorage.getItem('left-theme');
+if(saved) root.dataset.theme = saved;
+else if(window.matchMedia('(prefers-color-scheme: dark)').matches) root.dataset.theme='dark';
+$('#themeBtn').addEventListener('click',()=>{
+  const n = root.dataset.theme==='dark' ? 'light' : 'dark';
+  root.dataset.theme = n;
+  localStorage.setItem('left-theme', n);
+});
+
+/* go */
+route();
+</script>
+</body>
+</html>
